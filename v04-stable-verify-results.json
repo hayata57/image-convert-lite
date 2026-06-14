@@ -1,0 +1,106 @@
+{
+  "allPass": true,
+  "measuredAt": "2026-06-14T06:19:07.605Z",
+  "results": [
+    {
+      "id": "2. JPE → JPG",
+      "pass": true,
+      "detail": "成功: 1枚"
+    },
+    {
+      "id": "2. JPE → PNG",
+      "pass": true,
+      "detail": "成功: 1枚"
+    },
+    {
+      "id": "2. JPE → WebP",
+      "pass": true,
+      "detail": "成功: 1枚"
+    },
+    {
+      "id": "1. JFIF → JPG",
+      "pass": true,
+      "detail": "成功: 1枚"
+    },
+    {
+      "id": "1. JFIF → PNG",
+      "pass": true,
+      "detail": "成功: 1枚"
+    },
+    {
+      "id": "1. JFIF → WebP",
+      "pass": true,
+      "detail": "成功: 1枚"
+    },
+    {
+      "id": "3. BMP → JPG",
+      "pass": true,
+      "detail": "成功: 1枚"
+    },
+    {
+      "id": "3. BMP → PNG",
+      "pass": true,
+      "detail": "成功: 1枚"
+    },
+    {
+      "id": "3. BMP → WebP",
+      "pass": true,
+      "detail": "成功: 1枚"
+    },
+    {
+      "id": "4. AVIF → JPG",
+      "pass": true,
+      "detail": "成功: 1枚"
+    },
+    {
+      "id": "4. AVIF → PNG",
+      "pass": true,
+      "detail": "成功: 1枚"
+    },
+    {
+      "id": "4. AVIF → WebP",
+      "pass": true,
+      "detail": "成功: 1枚"
+    },
+    {
+      "id": "5. ICO → JPG",
+      "pass": true,
+      "detail": "成功: 1枚"
+    },
+    {
+      "id": "5. ICO → PNG",
+      "pass": true,
+      "detail": "成功: 1枚"
+    },
+    {
+      "id": "5. ICO → WebP",
+      "pass": true,
+      "detail": "成功: 1枚"
+    },
+    {
+      "id": "6. 複数形式混在一括変換",
+      "pass": true,
+      "detail": "done=5, errors=0, 成功: 5枚"
+    },
+    {
+      "id": "7. ZIPダウンロード",
+      "pass": true,
+      "detail": "converted-images-2026-06-14-06-19-03.zip"
+    },
+    {
+      "id": "8. 個別ダウンロード",
+      "pass": true,
+      "detail": "sample.jpg"
+    },
+    {
+      "id": "9. 診断コピー process mode: worker",
+      "pass": true,
+      "detail": "process mode: worker"
+    },
+    {
+      "id": "10. npm run build",
+      "pass": true,
+      "detail": "success"
+    }
+  ]
+}

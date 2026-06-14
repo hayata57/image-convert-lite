@@ -1,0 +1,77 @@
+{
+  "measuredAt": "2026-06-11T11:35:06.939Z",
+  "appUrl": "http://localhost:5175/",
+  "imageCount": 25,
+  "youtubeSeconds": 45,
+  "results": [
+    {
+      "label": "1_baseline",
+      "totalMs": 1404,
+      "totalSec": 1.4,
+      "before": {
+        "imageCount": 25,
+        "convertedBlobCount": 0,
+        "createdObjectUrlCount": 50,
+        "revokedObjectUrlCount": 25,
+        "activeObjectUrlCount": 25,
+        "usedJSHeapSize": 8296400,
+        "jsHeapSizeLimit": 4395630592
+      },
+      "after": {
+        "imageCount": 25,
+        "convertedBlobCount": 25,
+        "createdObjectUrlCount": 75,
+        "revokedObjectUrlCount": 50,
+        "activeObjectUrlCount": 25,
+        "usedJSHeapSize": 16076020,
+        "jsHeapSizeLimit": 4395630592
+      }
+    },
+    {
+      "label": "2_after_youtube",
+      "totalMs": 819,
+      "totalSec": 0.82,
+      "before": {
+        "imageCount": 25,
+        "convertedBlobCount": 25,
+        "createdObjectUrlCount": 75,
+        "revokedObjectUrlCount": 50,
+        "activeObjectUrlCount": 25,
+        "usedJSHeapSize": 9454522,
+        "jsHeapSizeLimit": 4395630592
+      },
+      "after": {
+        "imageCount": 25,
+        "convertedBlobCount": 25,
+        "createdObjectUrlCount": 100,
+        "revokedObjectUrlCount": 75,
+        "activeObjectUrlCount": 25,
+        "usedJSHeapSize": 11445096,
+        "jsHeapSizeLimit": 4395630592
+      }
+    },
+    {
+      "label": "3_after_reload",
+      "totalMs": 855,
+      "totalSec": 0.85,
+      "before": {
+        "imageCount": 25,
+        "convertedBlobCount": 0,
+        "createdObjectUrlCount": 50,
+        "revokedObjectUrlCount": 25,
+        "activeObjectUrlCount": 25,
+        "usedJSHeapSize": 12774311,
+        "jsHeapSizeLimit": 4395630592
+      },
+      "after": {
+        "imageCount": 25,
+        "convertedBlobCount": 25,
+        "createdObjectUrlCount": 75,
+        "revokedObjectUrlCount": 50,
+        "activeObjectUrlCount": 25,
+        "usedJSHeapSize": 18219168,
+        "jsHeapSizeLimit": 4395630592
+      }
+    }
+  ]
+}

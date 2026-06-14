@@ -1,0 +1,61 @@
+{
+  "allPass": true,
+  "measuredAt": "2026-06-14T05:08:15.437Z",
+  "results": [
+    {
+      "id": "1. 通常変換",
+      "pass": true,
+      "detail": "成功: 12枚"
+    },
+    {
+      "id": "10. 診断コピー process mode: worker",
+      "pass": true,
+      "detail": "process mode: worker\r"
+    },
+    {
+      "id": "2. 停止",
+      "pass": true,
+      "detail": "停止しました を確認"
+    },
+    {
+      "id": "2b. 停止時点の部分変換",
+      "pass": true,
+      "detail": "done=8, pending=4"
+    },
+    {
+      "id": "3. 停止後 ZIP DL",
+      "pass": true,
+      "detail": "converted-images-2026-06-14-05-07-47.zip"
+    },
+    {
+      "id": "4. 停止後 個別DL",
+      "pass": true,
+      "detail": "test-01.jpg"
+    },
+    {
+      "id": "5. 再開",
+      "pass": true,
+      "detail": "再開ボタン押下"
+    },
+    {
+      "id": "6. 再開後 残り変換",
+      "pass": true,
+      "detail": "done=12/12"
+    },
+    {
+      "id": "7. すべてクリア",
+      "pass": true,
+      "detail": "preview 12->0, image=0, blob=0, activeURL=0"
+    },
+    {
+      "id": "8. 新フォルダ投入で前回結果クリア",
+      "pass": true,
+      "detail": "prevDone=6, afterLoad done=0, msg=前回の変換結果をクリアして、新しい画像を 6 枚読み込みました。"
+    },
+    {
+      "id": "9. YouTube後も速度維持",
+      "pass": true,
+      "detail": "warning=false, processMode=worker, avgEncode=3.7ms"
+    }
+  ]
+}

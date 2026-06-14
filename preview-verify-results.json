@@ -1,0 +1,61 @@
+{
+  "allPass": true,
+  "results": [
+    {
+      "id": "画面表示",
+      "pass": true,
+      "detail": "Image Convert Lite - 無料画像変換ツール"
+    },
+    {
+      "id": "プライバシー表示",
+      "pass": true,
+      "detail": "画像はサーバーへアップロードされません。すべての変換処理はお使いのブラウザ内で実行されます。"
+    },
+    {
+      "id": "画像読み込み",
+      "pass": true,
+      "detail": "sample.jfif"
+    },
+    {
+      "id": "変換 (jpeg)",
+      "pass": true,
+      "detail": "成功: 1枚"
+    },
+    {
+      "id": "変換 (png)",
+      "pass": true,
+      "detail": "成功: 1枚"
+    },
+    {
+      "id": "変換 (webp)",
+      "pass": true,
+      "detail": "成功: 1枚"
+    },
+    {
+      "id": "ZIPダウンロード",
+      "pass": true,
+      "detail": "converted-images-2026-06-14-06-41-22.zip"
+    },
+    {
+      "id": "個別ダウンロード",
+      "pass": true,
+      "detail": "sample.webp"
+    },
+    {
+      "id": "Worker本番動作",
+      "pass": true,
+      "detail": "process mode: worker"
+    },
+    {
+      "id": "dist workerファイル",
+      "pass": true,
+      "detail": "found"
+    },
+    {
+      "id": "コンソールエラーなし",
+      "pass": true,
+      "detail": "none"
+    }
+  ],
+  "consoleErrors": []
+}

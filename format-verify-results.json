@@ -1,0 +1,70 @@
+{
+  "measuredAt": "2026-06-14T06:16:38.484Z",
+  "results": [
+    {
+      "file": "sample.jpe",
+      "createImageBitmap": {
+        "ok": true,
+        "width": 160,
+        "height": 120,
+        "outSize": 1780
+      },
+      "app": {
+        "ok": true,
+        "processMode": "worker"
+      }
+    },
+    {
+      "file": "sample.jfif",
+      "createImageBitmap": {
+        "ok": true,
+        "width": 160,
+        "height": 120,
+        "outSize": 1780
+      },
+      "app": {
+        "ok": true,
+        "processMode": "worker"
+      }
+    },
+    {
+      "file": "sample.bmp",
+      "createImageBitmap": {
+        "ok": true,
+        "width": 1,
+        "height": 1,
+        "outSize": 762
+      },
+      "app": {
+        "ok": true,
+        "processMode": "worker"
+      }
+    },
+    {
+      "file": "sample.avif",
+      "createImageBitmap": {
+        "ok": true,
+        "width": 2,
+        "height": 2,
+        "outSize": 761
+      },
+      "app": {
+        "ok": true,
+        "processMode": "worker"
+      }
+    },
+    {
+      "file": "sample.ico",
+      "createImageBitmap": {
+        "ok": true,
+        "width": 1,
+        "height": 1,
+        "outSize": 762
+      },
+      "app": {
+        "ok": true,
+        "processMode": "worker"
+      }
+    }
+  ]
+}
