@@ -32,6 +32,7 @@ import {
   collectErrorReasons,
 } from './utils/conversionResult';
 import { downloadImagesAsZip, downloadSingleImage } from './utils/downloadHelpers';
+import { isDeveloperModeEnabled } from './utils/developerMode';
 import type { SelectedImageFile } from './utils/folderLoader';
 import {
   prepareItemsForReconversion,
@@ -114,6 +115,7 @@ function App() {
   const [timingReports, setTimingReports] = useState<ConversionTimingReport[]>([]);
   const [currentTimingCount, setCurrentTimingCount] = useState(0);
   const [showEncodingSlowWarning, setShowEncodingSlowWarning] = useState(false);
+  const [isDeveloperMode] = useState(() => isDeveloperModeEnabled());
 
   const stopRequestedRef = useRef(false);
   const recentToBlobMsRef = useRef<number[]>([]);
@@ -609,12 +611,16 @@ function App() {
           すべての処理はお使いのブラウザ内で行われます。画像は外部に送信されません。
           （1回あたり最大 {MAX_FILES} 枚・1ファイル最大 25MB）
         </p>
-        <ConversionTimingPanel
-          reports={timingReports}
-          isConverting={isConverting}
-          currentTimingCount={currentTimingCount}
-        />
-        <ResourceDiagnosticsPanel items={items} />
+        {isDeveloperMode && (
+          <ConversionTimingPanel
+            reports={timingReports}
+            isConverting={isConverting}
+            currentTimingCount={currentTimingCount}
+          />
+        )}
+        {isDeveloperMode && (
+          <ResourceDiagnosticsPanel items={items} />
+        )}
       </footer>
     </div>
   );
