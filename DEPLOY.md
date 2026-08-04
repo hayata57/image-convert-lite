@@ -42,11 +42,15 @@ npm run preview
 ## SPA リダイレクト
 
 本アプリは React Router（`/` と `/guide`）を使用しています。  
-Cloudflare Pages で `/guide` の直接アクセスや再読み込み時に 404 にならないよう、`public/_redirects` に次を配置しています。
+`/guide` の直接アクセスや再読み込み時に 404 にならないよう、`public/_redirects` に明示パスを配置しています。
 
 ```
-/*    /index.html   200
+/guide    /index.html   200
+/guide/   /index.html   200
 ```
+
+※ Workers の静的アセット検証では、`/* → /index.html` の包括ルールが
+無限ループと判定されてデプロイに失敗する場合があるため、必要なパスのみを列挙しています。
 
 ## 参考：package.json scripts
 

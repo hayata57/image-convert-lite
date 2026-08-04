@@ -1,2 +1,4 @@
-# SPA: serve index.html for client-side routes (e.g. /guide)
-/*    /index.html   200
+# SPA: /guide の直接アクセス・再読み込み時に index.html を返す
+# （Workers では /* → /index.html の包括ルールが検証エラーになる場合があるため、明示パスのみ定義）
+/guide    /index.html   200
+/guide/   /index.html   200
