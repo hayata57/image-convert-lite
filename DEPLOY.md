@@ -39,18 +39,20 @@ npm run preview
 - 変換時間診断で `process mode: worker`
 - ブラウザコンソールにエラーがない
 
-## SPA リダイレクト
+## SPA ルーティング（/guide の直接アクセス）
 
 本アプリは React Router（`/` と `/guide`）を使用しています。  
-`/guide` の直接アクセスや再読み込み時に 404 にならないよう、`public/_redirects` に明示パスを配置しています。
+Cloudflare Workers の静的アセット設定で、存在しないパスへのナビゲーションにも
+`index.html` を返すようにしています（`wrangler.toml`）。
 
-```
-/guide    /index.html   200
-/guide/   /index.html   200
+```toml
+[assets]
+directory = "./dist"
+not_found_handling = "single-page-application"
 ```
 
-※ Workers の静的アセット検証では、`/* → /index.html` の包括ルールが
-無限ループと判定されてデプロイに失敗する場合があるため、必要なパスのみを列挙しています。
+`/* → /index.html` 形式の `public/_redirects` 包括ルールは、Workers 側の検証で
+デプロイ失敗や意図しないリダイレクトの原因になることがあるため使用していません。
 
 ## 参考：package.json scripts
 
