@@ -41,16 +41,12 @@ npm run preview
 
 ## SPA リダイレクト
 
-本アプリは React Router を使用していないため、`public/_redirects` は **不要** です。
+本アプリは React Router（`/` と `/guide`）を使用しています。  
+Cloudflare Pages で `/guide` の直接アクセスや再読み込み時に 404 にならないよう、`public/_redirects` に次を配置しています。
 
-## 公開後に差し替えるファイル
-
-独自ドメイン決定後、以下を更新してください。
-
-| ファイル | 更新内容 |
-|---------|---------|
-| `public/sitemap.xml` | `<loc>` の URL を本番ドメインに変更 |
-| `index.html` | `og:url` を本番 URL に変更 |
+```
+/*    /index.html   200
+```
 
 ## 参考：package.json scripts
 

@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://image.sakutio.com/sitemap.xml
