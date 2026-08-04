@@ -1,34 +1,27 @@
-import { LayoutGrid, Mail, Sparkles } from 'lucide-react';
-import {
-  SAKUTIO_ABOUT_URL,
-  SAKUTIO_CONTACT_URL,
-  SAKUTIO_HOME_URL,
-  SAKUTIO_TOOLS_URL,
-} from '../constants/sakutioLinks';
-import { SakutioBrandMark } from './SakutioBrandMark';
-
+/**
+ * グローバルヘッダーの実装本体は、Sakutio Homeが配信する共通Web Component
+ * （https://sakutio.com/shared/sakutio-global-header.js、
+ * カスタム要素: <sakutio-global-header>）に一元化されている。
+ * このコンポーネントは、そのカスタム要素を描画するホストに過ぎない。
+ *
+ * home-context属性は付けないため、リンクは常にSakutio Homeの絶対URLになる
+ * （https://sakutio.com/、https://sakutio.com/#tools、https://sakutio.com/#about、
+ * https://sakutio.com/contact）。
+ *
+ * 子要素（sakutio-header-fallback）は、共通スクリプトが読み込めなかった場合に
+ * のみブラウザに表示される最低限のフォールバックリンク。
+ */
 export function SakutioHeader() {
   return (
-    <header className="sakutio-header">
-      <div className="sakutio-header__inner">
-        <a href={SAKUTIO_HOME_URL} className="sakutio-logo">
-          <SakutioBrandMark />
-        </a>
-        <nav className="sakutio-nav" aria-label="Sakutio共通ナビゲーション">
-          <a href={SAKUTIO_TOOLS_URL} className="sakutio-nav__link">
-            <LayoutGrid size={15} strokeWidth={2} aria-hidden="true" />
-            ツール一覧
-          </a>
-          <a href={SAKUTIO_ABOUT_URL} className="sakutio-nav__link">
-            <Sparkles size={15} strokeWidth={2} aria-hidden="true" />
-            Sakutioについて
-          </a>
-          <a href={SAKUTIO_CONTACT_URL} className="sakutio-nav__link">
-            <Mail size={15} strokeWidth={2} aria-hidden="true" />
-            お問い合わせ
-          </a>
+    <sakutio-global-header>
+      <div className="sakutio-header-fallback">
+        <a href="https://sakutio.com/">Sakutio</a>
+        <nav>
+          <a href="https://sakutio.com/#tools">ツール一覧</a>
+          <a href="https://sakutio.com/#about">Sakutioについて</a>
+          <a href="https://sakutio.com/contact">お問い合わせ</a>
         </nav>
       </div>
-    </header>
+    </sakutio-global-header>
   );
 }

@@ -30,18 +30,11 @@ body {
   flex-direction: column;
 }
 
-/* Sakutio shared header */
-.sakutio-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(251, 252, 254, 0.86);
-  border-bottom: 1px solid #e6ebf4;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-.sakutio-header__inner {
+/* Sakutio shared header
+   グローバルヘッダー本体は、Sakutio Homeが配信する共通Web Component
+   （https://sakutio.com/shared/sakutio-global-header.js）に一元化されているため、
+   このファイルにはヘッダー専用CSSを持たない。読み込み失敗時の最小フォールバックのみ以下に定義する。 */
+.sakutio-header-fallback {
   width: 100%;
   max-width: 1040px;
   margin: 0 auto;
@@ -54,96 +47,16 @@ body {
   gap: 0.75rem 1.5rem;
 }
 
-.sakutio-logo {
-  display: inline-flex;
-  text-decoration: none;
-}
-
-.sakutio-logo:hover .sakutio-brand-mark__text {
-  color: #354887;
-}
-
-.sakutio-logo:focus-visible {
-  outline: 2px solid #4258a1;
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-
-.sakutio-brand-mark {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-}
-
-.sakutio-brand-mark__icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.7rem;
-  height: 1.7rem;
-  border-radius: 8px;
-  background: linear-gradient(145deg, #4258a1 0%, #5b6fbf 100%);
-  color: #ffffff;
-  flex-shrink: 0;
-}
-
-.sakutio-brand-mark__icon svg {
-  display: block;
-  width: 0.95rem;
-  height: 0.95rem;
-}
-
-.sakutio-brand-mark__text {
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
+.sakutio-header-fallback a {
   color: #4258a1;
+  text-decoration: none;
+  margin-right: 1rem;
 }
 
-.sakutio-nav {
-  display: flex;
+.sakutio-header-fallback nav {
+  display: inline-flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 0.25rem 0.35rem;
-}
-
-.sakutio-nav__link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  color: #4b5568;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  padding: 0.4rem 0.65rem;
-  border-radius: 999px;
-  transition: background-color 180ms ease, color 180ms ease;
-}
-
-.sakutio-nav__link:hover {
-  color: #4258a1;
-  background: #f2f4fb;
-}
-
-.sakutio-nav__link:focus-visible {
-  outline: 2px solid #4258a1;
-  outline-offset: 2px;
-}
-
-.sakutio-nav__link svg {
-  flex-shrink: 0;
-  opacity: 0.85;
-}
-
-@media (max-width: 480px) {
-  .sakutio-header__inner {
-    padding: 0.55rem 1rem;
-  }
-
-  .sakutio-nav__link {
-    padding: 0.35rem 0.45rem;
-    font-size: 0.85rem;
-  }
+  gap: 0.35rem 1rem;
 }
 
 .app-header {
