@@ -204,10 +204,7 @@ export function ConvertPage() {
 
     setSessionSkips((current) => appendSessionSkips(current, addedCount, addedReasons));
 
-    const immediateWarnings = [...limitSkipMessages, ...nonImageSkipReasons];
-    if (immediateWarnings.length > 0) {
-      setSkipWarnings((current) => [...current, ...immediateWarnings]);
-    }
+    setSkipWarnings([...limitSkipMessages, ...nonImageSkipReasons]);
   };
 
   const finalizeConversionRun = (
@@ -369,14 +366,11 @@ export function ConvertPage() {
 
     if (imageFiles.length === 0) {
       setGlobalError(null);
-      setGlobalMessage(null);
-      if (skippedCount > 0) {
-        recordLoadSkips(skippedCount, {
-          accepted: [],
-          skippedTooLarge: [],
-          skippedMaxFiles: 0,
-        });
-      }
+      recordLoadSkips(skippedCount, {
+        accepted: [],
+        skippedTooLarge: [],
+        skippedMaxFiles: 0,
+      });
       setGlobalMessage(buildLoadMessage(0, skippedCount, sourceLabel));
       return;
     }
