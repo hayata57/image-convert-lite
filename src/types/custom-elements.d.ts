@@ -14,6 +14,10 @@ declare module 'react' {
         HTMLAttributes<HTMLElement>,
         HTMLElement
       >;
+      'sakutio-global-footer': DetailedHTMLProps<
+        HTMLAttributes<HTMLElement>,
+        HTMLElement
+      >;
     }
   }
 }

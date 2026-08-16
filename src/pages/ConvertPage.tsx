@@ -7,6 +7,7 @@ import { ConversionTimingPanel } from '../components/ConversionTimingPanel';
 import { EncodingSlowWarning } from '../components/EncodingSlowWarning';
 import { ResourceDiagnosticsPanel } from '../components/ResourceDiagnosticsPanel';
 import { SakutioHeader } from '../components/SakutioHeader';
+import { SakutioFooter } from '../components/SakutioFooter';
 import { SettingsPanel } from '../components/SettingsPanel';
 import { MAX_FILES } from '../constants';
 import type {
@@ -622,7 +623,7 @@ export function ConvertPage() {
         />
       </main>
 
-      <footer className="app-footer">
+      <div className="app-footer">
         <p>
           すべての処理はお使いのブラウザ内で行われます。画像は外部に送信されません。
           （1回あたり最大 {MAX_FILES} 枚・1ファイル最大 25MB）
@@ -637,7 +638,8 @@ export function ConvertPage() {
         {isDeveloperMode && (
           <ResourceDiagnosticsPanel items={items} />
         )}
-      </footer>
+      </div>
+      <SakutioFooter />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { SakutioHeader } from '../components/SakutioHeader';
+import { SakutioFooter } from '../components/SakutioFooter';
 import { MAX_FILE_SIZE_MB, MAX_FILES } from '../constants';
 
 const FAQ_ITEMS: { question: string; answer: ReactNode }[] = [
@@ -316,12 +317,13 @@ export function GuidePage() {
         </section>
       </main>
 
-      <footer className="app-footer">
+      <div className="app-footer">
         <p>
           すべての処理はお使いのブラウザ内で行われます。画像は外部に送信されません。
           （1回あたり最大 {MAX_FILES} 枚・1ファイル最大 {MAX_FILE_SIZE_MB}MB）
         </p>
-      </footer>
+      </div>
+      <SakutioFooter />
     </div>
   );
 }
