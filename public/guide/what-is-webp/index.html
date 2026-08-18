@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebPとは？画像をWebPに変換するメリットと注意点をわかりやすく解説</title>
+    <meta name="description" content="WebP（ウェッピー）とはどんな画像形式？画像をWebPに変換するメリットや注意点、向いている用途を初心者向けにわかりやすく解説。Image Convert Liteを使った変換方法も紹介します。" />
+    <link rel="canonical" href="https://image.sakutio.com/guide/what-is-webp/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="WebPとは？画像をWebPに変換するメリットと注意点をわかりやすく解説" />
+    <meta property="og:description" content="WebP（ウェッピー）とはどんな画像形式？画像をWebPに変換するメリットや注意点、向いている用途を初心者向けにわかりやすく解説。Image Convert Liteを使った変換方法も紹介します。" />
+    <meta property="og:url" content="https://image.sakutio.com/guide/what-is-webp/" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="stylesheet" href="https://sakutio.com/shared/sakutio-brand-v1.css" />
+    <link rel="stylesheet" href="https://sakutio.com/shared/sakutio-guide-v1.css" />
+    <script defer src="https://sakutio.com/shared/sakutio-global-header.js"></script>
+    <script defer src="https://sakutio.com/shared/sakutio-global-footer.js"></script>
+    <script defer src="https://sakutio.com/shared/sakutio-guide-v1.js"></script>
+  </head>
+  <body>
+    <div class="sg-guide">
+      <sakutio-global-header>
+        <div class="sakutio-header-fallback"><a href="https://sakutio.com/">Sakutio</a></div>
+      </sakutio-global-header>
+
+      <header class="sg-tool-band">
+        <div class="sg-tool-band__inner">
+          <a class="sg-tool-band__name" href="/">Image Convert Lite</a>
+        </div>
+      </header>
+
+      <main class="sg-page">
+        <article class="sg-article">
+          <nav class="sg-breadcrumb" aria-label="パンくず">
+            <a href="https://sakutio.com/">Sakutio</a>
+            <span aria-hidden="true"> › </span>
+            <a href="/">Image Convert Lite</a>
+            <span aria-hidden="true"> › </span>
+            <span>ガイド</span>
+          </nav>
+
+          <header class="sg-header sg-prose">
+            <h1><span class="sg-heading-marker">WebPとは？画像をWebPに変換するメリットと注意点をわかりやすく解説</span></h1>
+            <p class="sg-lead">画像を保存したときに、ファイル名の最後が「.webp」になっていて、「WebPって何だろう？」と思ったことはありませんか？</p>
+            <p>WebP（ウェッピー）は、JPGやPNGと同じ<strong>画像ファイル形式のひとつ</strong>です。画像の見た目をできるだけ保ちながらファイル容量を小さくしやすく、Webサイトやブログなどでも広く使われています。</p>
+            <p>この記事では、WebPとはどんな画像形式なのか、JPGやPNGから変換するとどんなメリットがあるのか、注意点とあわせてわかりやすく紹介します。</p>
+          </header>
+
+          <div class="sg-flow sg-prose">
+            <section class="sg-summary" aria-labelledby="summary-title">
+              <h2 id="summary-title" class="sg-summary__title">この記事でわかること</h2>
+              <ul>
+                <li>WebPとはどんな画像形式なのか</li>
+                <li>WebPに変換するメリット</li>
+                <li>WebPを使うときの注意点</li>
+                <li>WebPへの変換が向いている場面</li>
+                <li>JPG・PNGをWebPへ変換する方法</li>
+              </ul>
+            </section>
+          </div>
+
+          <details class="sg-toc" open>
+            <summary>目次</summary>
+            <ol class="sg-toc__list">
+              <li class="sg-toc__item"><a class="sg-toc__link" href="#what-is-webp">WebPとは？</a></li>
+              <li class="sg-toc__item"><a class="sg-toc__link" href="#merits">WebPに変換するメリット</a></li>
+              <li class="sg-toc__item"><a class="sg-toc__link" href="#cautions">WebPにも注意点がある</a></li>
+              <li class="sg-toc__item"><a class="sg-toc__link" href="#use-cases">WebPへの変換が向いているのはこんなとき</a></li>
+              <li class="sg-toc__item"><a class="sg-toc__link" href="#how-to-convert">JPG・PNG画像をWebPに変換する方法</a></li>
+              <li class="sg-toc__item"><a class="sg-toc__link" href="#faq">よくある質問</a></li>
+              <li class="sg-toc__item"><a class="sg-toc__link" href="#summary">まとめ</a></li>
+            </ol>
+          </details>
+
+          <section class="sg-section sg-prose" id="what-is-webp">
+            <h2>WebPとは？</h2>
+            <p>WebP（ウェッピー）は、Googleが開発した画像形式です。ファイルの拡張子は「.webp」になります。</p>
+            <p>JPGと同じように画像データの一部を省いて容量を小さくする「非可逆圧縮」と、PNGのように元の情報を保ったまま圧縮する「可逆圧縮」の両方に対応しています。</p>
+            <p>さらに、PNGのような<strong>背景が透明な画像（透過画像）</strong>も扱えます。</p>
+            <p>つまりWebPは、JPGやPNGがそれぞれ得意としてきた特徴を幅広く持ちながら、<strong>画像容量を小さくしやすいよう設計された形式</strong>と考えるとわかりやすいでしょう。</p>
+          </section>
+
+          <section class="sg-section sg-prose" id="merits">
+            <h2>WebPに変換するメリット</h2>
+            <h3>画像の容量を小さくしやすい</h3>
+            <p>WebPの大きなメリットは、<strong>画質とファイル容量のバランスを取りやすいこと</strong>です。</p>
+            <p><a href="https://developers.google.com/speed/webp/docs/webp_study" target="_blank" rel="noopener noreferrer">Googleが公開している比較</a>では、同程度の画質を基準にした場合、WebPはJPEGより25〜34％小さいファイルサイズになったという結果があります。</p>
+            <p>ただし、画像の内容や変換時の設定によって結果は変わります。WebPへ変換すれば、どんな画像でも同じ割合で小さくなるわけではありません。</p>
+            <p>画像容量が小さくなれば、Webサイトやブログでは画像の読み込みに必要なデータ量を減らしやすくなります。</p>
+
+            <h3>透過画像にも使える</h3>
+            <p>WebPは透明部分を持つ画像にも対応しています。</p>
+            <p>そのため、「背景を透明にしたいからPNGを使っている」という場合でも、用途によってはWebPへ変換できます。</p>
+            <p>ロゴやイラストなど、透明な背景を残したまま画像容量を抑えたい場合にも便利です。</p>
+          </section>
+
+          <section class="sg-section sg-prose" id="cautions">
+            <h2>WebPにも注意点がある</h2>
+            <p>便利なWebPですが、<strong>すべての画像をWebPにすればよいわけではありません。</strong></p>
+            <p>まず、WebPに変換したからといって、必ず元の画像より容量が小さくなるとは限りません。元画像の種類や内容、圧縮設定などによって結果は変わります。</p>
+            <p>現在はChrome・Edge・Firefox・Safari・Operaなど主要なブラウザーでWebPを利用できますが、古いソフトや古い環境まで含めると、JPGやPNGのほうが扱いやすい場合があります。</p>
+            <p>Webサイトで使う画像ならWebPは有力な選択肢ですが、画像ファイルそのものを人に渡す場合などは、相手が使う環境も考えて形式を選ぶと安心です。</p>
+
+            <div class="sg-note sg-note--info">
+              <div class="sg-note__label">WebPより新しい「AVIF」とは？</div>
+              <p>WebPとあわせて名前を見かけることが増えている画像形式に「AVIF」があります。</p>
+              <p>AVIFについては別の記事で詳しく紹介しますが、<strong>簡単に言うとAVIFはWebPと同じく画像を軽くしやすく、WebPより新しい画像形式で、高い圧縮効率が特徴です。</strong></p>
+            </div>
+          </section>
+
+          <section class="sg-section sg-prose" id="use-cases">
+            <h2>WebPへの変換が向いているのはこんなとき</h2>
+            <p>WebPへの変換は、特に次のような場面で役立ちます。</p>
+            <ul>
+              <li>Webサイトやブログで使う画像を軽くしたい</li>
+              <li>JPGやPNG画像の容量を小さくできるか試したい</li>
+              <li>透明な背景を残したままWeb向けの画像にしたい</li>
+              <li>複数の画像をWebP形式にそろえたい</li>
+            </ul>
+            <p>反対に、提出先や利用するサービスから「JPGで提出」「PNGのみ対応」など形式を指定されている場合は、無理にWebPへ変換する必要はありません。</p>
+            <p><strong>画像形式は、用途に合わせて選ぶことが大切です。</strong></p>
+          </section>
+
+          <section class="sg-section sg-prose" id="how-to-convert">
+            <h2>JPG・PNG画像をWebPに変換する方法</h2>
+            <p>Sakutioの「<a href="/">Image Convert Lite</a>」では、JPGやPNGなどの画像をブラウザー上でWebPへ変換できます。</p>
+            <p>複数の画像をまとめて追加して変換することもできます。</p>
+
+            <div class="sg-steps">
+              <section class="sg-step">
+                <div class="sg-step__number">
+                  <span class="sg-step__kicker">STEP</span>
+                  <span class="sg-step__digit">01</span>
+                </div>
+                <div class="sg-step__body">
+                  <h3>変換したい画像を追加する</h3>
+                  <p>Image Convert Liteを開き、WebPに変換したい画像を追加します。</p>
+                  <p>画像ファイルをドラッグ＆ドロップするか、「画像ファイルを選択」ボタンから追加できます。</p>
+                  <p><strong>画像を追加すると、下の画像一覧にプレビューとファイル情報が表示されます。</strong> 追加した画像が一覧に表示されていれば、読み込み完了です。</p>
+                  <figure class="sg-figure sg-figure--wide">
+                    <button class="sg-figure__zoom" type="button" aria-label="画像を拡大表示">
+                      <img src="/guide/what-is-webp/guide-webp-add-image.png" alt="Image Convert Liteに画像を追加し、下の画像一覧にプレビューが表示された画面" width="1219" height="1082" loading="lazy" decoding="async" />
+                    </button>
+                    <figcaption>画像を追加すると、下の画像一覧にプレビューが表示されます。</figcaption>
+                  </figure>
+                </div>
+              </section>
+
+              <section class="sg-step">
+                <div class="sg-step__number">
+                  <span class="sg-step__kicker">STEP</span>
+                  <span class="sg-step__digit">02</span>
+                </div>
+                <div class="sg-step__body">
+                  <h3>出力形式でWebPを選ぶ</h3>
+                  <p>「変換設定」にある出力形式のプルダウンを開き、「WebP」を選択します。</p>
+                  <figure class="sg-figure sg-figure--wide">
+                    <button class="sg-figure__zoom" type="button" aria-label="画像を拡大表示">
+                      <img src="/guide/what-is-webp/guide-webp-select-webp.png" alt="Image Convert Liteの出力形式でWebPを選択する画面" width="1212" height="756" loading="lazy" decoding="async" />
+                    </button>
+                    <figcaption>出力形式の一覧から「WebP」を選択します。</figcaption>
+                  </figure>
+                </div>
+              </section>
+
+              <section class="sg-step">
+                <div class="sg-step__number">
+                  <span class="sg-step__kicker">STEP</span>
+                  <span class="sg-step__digit">03</span>
+                </div>
+                <div class="sg-step__body">
+                  <h3>変換して保存する</h3>
+                  <p>「一括変換」を押して変換を実行します。</p>
+                  <p>変換が完了したら、変換後の画像を保存します。</p>
+                  <p>複数のJPG・PNG画像をまとめてWebPへ変換したい場合にも利用できます。</p>
+                </div>
+              </section>
+            </div>
+
+            <div class="sg-cta sg-cta--secondary">
+              <p class="sg-cta__text">実際にJPG・PNG画像をWebPへ変換してみましょう。</p>
+              <a class="sg-button sg-button--secondary" href="/">Image Convert LiteでWebPに変換する</a>
+            </div>
+          </section>
+
+          <section class="sg-section sg-prose" id="faq">
+            <h2>よくある質問</h2>
+            <div class="sg-faq">
+              <details>
+                <summary>WebPをJPGやPNGに戻すことはできますか？</summary>
+                <div class="sg-faq__answer">
+                  <p>はい。WebPに対応した画像変換ソフトやWebツールを使えば、JPGやPNGなど別の画像形式へ変換できます。</p>
+                  <p>Image Convert Liteでも、対応している画像形式の範囲で変換できます。</p>
+                </div>
+              </details>
+              <details>
+                <summary>PNGをWebPにすると透明な部分はなくなりますか？</summary>
+                <div class="sg-faq__answer">
+                  <p>WebPは透過に対応しているため、適切な方法で変換すればPNGの透明部分を残すことができます。</p>
+                  <p>ただし、最終的にJPGへ変換すると、JPG自体が透過に対応していないため、透明部分をそのまま保持することはできません。</p>
+                </div>
+              </details>
+              <details>
+                <summary>WebPに変換すると画質は落ちますか？</summary>
+                <div class="sg-faq__answer">
+                  <p>変換方法によります。</p>
+                  <p>WebPには、画像情報を保ったまま圧縮する可逆圧縮と、一部の情報を省いて容量を小さくする非可逆圧縮があります。</p>
+                  <p>非可逆圧縮では設定によって画質が変化するため、容量だけでなく実際の画像の見え方も確認するのがおすすめです。</p>
+                </div>
+              </details>
+            </div>
+          </section>
+
+          <section class="sg-section sg-prose" id="summary">
+            <h2>まとめ</h2>
+            <p>WebPは、JPGやPNGと同じ画像ファイル形式のひとつで、<strong>画質とファイル容量のバランスを取りやすいことが特徴</strong>です。</p>
+            <p>Webサイトやブログで使う画像を軽くしたい場合や、透過を残したまま画像容量を抑えたい場合などに便利です。</p>
+            <p>ただし、WebPにすれば必ず容量が小さくなるわけではなく、利用するサービスや相手の環境によってはJPG・PNGが適していることもあります。</p>
+            <p>大切なのは、「新しい形式だからWebPを使う」のではなく、<strong>画像を何に使うのかに合わせて形式を選ぶこと</strong>です。</p>
+            <p>JPG・PNG画像をWebPへ変換したい場合は、無料の「Image Convert Lite」で簡単に試せます。</p>
+          </section>
+
+          <section class="sg-related" aria-labelledby="related-title">
+            <h2 id="related-title">関連ガイド</h2>
+            <div class="sg-related__item">
+              <a class="sg-related__link" href="/guide">Image Convert Liteの使い方</a>
+              <p class="sg-related__desc">対応形式や設定項目、基本的な画像変換の手順をまとめています。</p>
+            </div>
+          </section>
+
+          <section class="sg-final-cta">
+            <a class="sg-button sg-button--primary" href="/">Image Convert Liteで画像をWebPに変換する</a>
+          </section>
+        </article>
+      </main>
+
+      <sakutio-global-footer>
+        <div class="sakutio-footer-fallback"><a href="https://sakutio.com/">Sakutio</a></div>
+      </sakutio-global-footer>
+    </div>
+  </body>
+</html>
