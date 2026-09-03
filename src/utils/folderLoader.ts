@@ -5,6 +5,79 @@ export interface SelectedImageFile {
   relativePath: string;
 }
 
+interface DirectoryPickerFileHandle {
+  readonly kind: 'file';
+  readonly name: string;
+  getFile(): Promise<File>;
+}
+
+export interface DirectoryPickerDirectoryHandle {
+  readonly kind: 'directory';
+  readonly name: string;
+  entries(): AsyncIterableIterator<
+    [string, DirectoryPickerFileHandle | DirectoryPickerDirectoryHandle]
+  >;
+}
+
+type DirectoryPickerWindow = Window & {
+  showDirectoryPicker?: (options?: {
+    mode?: 'read' | 'readwrite';
+  }) => Promise<DirectoryPickerDirectoryHandle>;
+};
+
+function getDirectoryPickerWindow(): DirectoryPickerWindow | undefined {
+  if (typeof window === 'undefined') {
+    return undefined;
+  }
+
+  return window as DirectoryPickerWindow;
+}
+
+export function canUseShowDirectoryPicker(): boolean {
+  return typeof getDirectoryPickerWindow()?.showDirectoryPicker === 'function';
+}
+
+export function openDirectoryPicker(): Promise<DirectoryPickerDirectoryHandle> {
+  const picker = getDirectoryPickerWindow()?.showDirectoryPicker;
+  if (typeof picker !== 'function') {
+    return Promise.reject(new Error('showDirectoryPicker is not available'));
+  }
+
+  return picker.call(window, { mode: 'read' });
+}
+
+export async function extractImageFilesFromDirectoryHandle(
+  directoryHandle: DirectoryPickerDirectoryHandle,
+  pathPrefix: string = directoryHandle.name,
+): Promise<FilterImageFilesResult> {
+  const imageFiles: SelectedImageFile[] = [];
+  let skippedCount = 0;
+
+  for await (const [name, handle] of directoryHandle.entries()) {
+    if (handle.kind === 'file') {
+      const file = await handle.getFile();
+      if (isAcceptedImageFile(file)) {
+        imageFiles.push({
+          file,
+          relativePath: pathPrefix ? `${pathPrefix}/${file.name}` : file.name,
+        });
+      } else {
+        skippedCount += 1;
+      }
+      continue;
+    }
+
+    if (handle.kind === 'directory') {
+      const nestedPrefix = pathPrefix ? `${pathPrefix}/${name}` : name;
+      const nested = await extractImageFilesFromDirectoryHandle(handle, nestedPrefix);
+      imageFiles.push(...nested.imageFiles);
+      skippedCount += nested.skippedCount;
+    }
+  }
+
+  return { imageFiles, skippedCount };
+}
+
 export interface FilterImageFilesResult {
   imageFiles: SelectedImageFile[];
   skippedCount: number;
