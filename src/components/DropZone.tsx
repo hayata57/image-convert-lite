@@ -2,8 +2,11 @@ import { useRef, useState } from 'react';
 import type { SelectedImageFile } from '../utils/folderLoader';
 import { FILE_INPUT_ACCEPT } from '../utils/formatHelpers';
 import {
+  canUseShowDirectoryPicker,
   extractImageFilesFromDataTransfer,
+  extractImageFilesFromDirectoryHandle,
   filterImageFilesFromList,
+  openDirectoryPicker,
 } from '../utils/folderLoader';
 
 interface DropZoneProps {
@@ -15,11 +18,15 @@ interface DropZoneProps {
   disabled?: boolean;
 }
 
+function isDirectoryPickerAbort(error: unknown): boolean {
+  return error instanceof DOMException && error.name === 'AbortError';
+}
+
 export function DropZone({ onFilesSelected, disabled = false }: DropZoneProps) {
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const folderInputRef = useRef<HTMLInputElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [isProcessingDrop, setIsProcessingDrop] = useState(false);
+  const [supportsDirectoryPicker] = useState(canUseShowDirectoryPicker);
 
   const emitSelection = (
     imageFiles: SelectedImageFile[],
@@ -41,17 +48,6 @@ export function DropZone({ onFilesSelected, disabled = false }: DropZoneProps) {
 
     const { imageFiles, skippedCount } = filterImageFilesFromList(fileList);
     emitSelection(imageFiles, skippedCount, 'file');
-    event.target.value = '';
-  };
-
-  const handleFolderInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const fileList = event.target.files;
-    if (!fileList || disabled) {
-      return;
-    }
-
-    const { imageFiles, skippedCount } = filterImageFilesFromList(fileList);
-    emitSelection(imageFiles, skippedCount, 'folder');
     event.target.value = '';
   };
 
@@ -105,10 +101,26 @@ export function DropZone({ onFilesSelected, disabled = false }: DropZoneProps) {
     }
   };
 
-  const handleSelectFolderClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleSelectFolderClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
-    if (!disabled) {
-      folderInputRef.current?.click();
+    if (disabled || isProcessingDrop || !supportsDirectoryPicker) {
+      return;
+    }
+
+    try {
+      const directoryHandle = await openDirectoryPicker();
+      setIsProcessingDrop(true);
+      const { imageFiles, skippedCount } = await extractImageFilesFromDirectoryHandle(
+        directoryHandle,
+      );
+      emitSelection(imageFiles, skippedCount, 'folder');
+    } catch (error) {
+      if (isDirectoryPickerAbort(error)) {
+        return;
+      }
+      throw error;
+    } finally {
+      setIsProcessingDrop(false);
     }
   };
 
@@ -132,16 +144,6 @@ export function DropZone({ onFilesSelected, disabled = false }: DropZoneProps) {
         className="drop-zone__input"
         disabled={disabled}
       />
-      <input
-        ref={folderInputRef}
-        type="file"
-        accept={FILE_INPUT_ACCEPT}
-        multiple
-        onChange={handleFolderInputChange}
-        className="drop-zone__input"
-        disabled={disabled}
-        {...({ webkitdirectory: '', directory: '' } as React.InputHTMLAttributes<HTMLInputElement>)}
-      />
 
       <div className="drop-zone__icon" aria-hidden="true">
         📁
@@ -163,14 +165,18 @@ export function DropZone({ onFilesSelected, disabled = false }: DropZoneProps) {
         >
           画像ファイルを選択
         </button>
-        <button
-          type="button"
-          className="button button--secondary button--small"
-          onClick={handleSelectFolderClick}
-          disabled={disabled}
-        >
-          フォルダを選択
-        </button>
+        {supportsDirectoryPicker ? (
+          <button
+            type="button"
+            className="button button--secondary button--small"
+            onClick={(event) => {
+              void handleSelectFolderClick(event);
+            }}
+            disabled={disabled}
+          >
+            フォルダを選択
+          </button>
+        ) : null}
       </div>
     </div>
   );
