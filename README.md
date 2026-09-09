@@ -37,6 +37,14 @@
 
 Cloudflare Pages 向けの設定値と手順は [DEPLOY.md](./DEPLOY.md) を参照してください。
 
+## 処理画面の共通Chrome
+
+Header/Footerの正本はSakutio Homeです。`src/shared-chrome/generated/` と
+`public/shared-chrome/version.json` の生成物は直接編集しません。ガイドの既存の
+共通アセット読み込み方式はこの対象外です。通常の開発・buildはcheckout済み生成物を
+検証するだけで、Homeからの取得・同期・再生成は行いません。
+validatorやworkflowの変更は通常PRでは拒否し、理由・レビュー担当者・検証結果をPRに記録した保護メンテナンスでのみ取り込みます。
+
 ## 必要環境
 
 - [Node.js](https://nodejs.org/) 18 以上（**LTS 版を推奨**）
@@ -571,3 +579,8 @@ src/
 ## ライセンス
 
 このプロジェクトは無料公開を前提とした MVP です。
+
+
+### Static guide Header/Footer
+
+Production builds embed the validated local shared Chrome into static public guide pages, preserving article content. React guide pages use the same generated wrappers as the app. No remote synchronization occurs during build. Run the normal build and preview its output to check guides; CI independently verifies the generated pages with node scripts/shared-chrome/static-pages.mjs --verify. Missing guide slots or legacy Header/Footer scripts in published HTML fail the build. Guide v1 article behavior remains separate from Header/Footer synchronization.

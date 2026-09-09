@@ -4,8 +4,12 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "predev": "npm run shared-chrome:verify",
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "prebuild": "npm run shared-chrome:verify",
+    "build": "tsc -b && vite build && node scripts/shared-chrome/static-pages.mjs",
+    "shared-chrome:verify": "node scripts/shared-chrome/verify-installed.mjs",
+    "shared-chrome:test": "node --test scripts/shared-chrome/shared-chrome.test.mjs scripts/shared-chrome/static-pages.test.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -19,7 +23,11 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.5.2",
+    "parse5": "8.0.1",
     "playwright": "^1.60.0",
+    "postcss": "8.5.28",
+    "postcss-selector-parser": "7.1.6",
+    "postcss-value-parser": "4.2.0",
     "typescript": "~5.8.3",
     "vite": "^6.3.5"
   }

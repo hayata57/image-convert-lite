@@ -6,8 +6,6 @@ import { ImageList } from '../components/ImageList';
 import { ConversionTimingPanel } from '../components/ConversionTimingPanel';
 import { EncodingSlowWarning } from '../components/EncodingSlowWarning';
 import { ResourceDiagnosticsPanel } from '../components/ResourceDiagnosticsPanel';
-import { SakutioHeader } from '../components/SakutioHeader';
-import { SakutioFooter } from '../components/SakutioFooter';
 import { SettingsPanel } from '../components/SettingsPanel';
 import { MAX_FILES } from '../constants';
 import type {
@@ -531,8 +529,7 @@ export function ConvertPage() {
   }, []);
 
   return (
-    <div className="app">
-      <SakutioHeader />
+    <>
       <header className="app-header">
         <div className="app-header__content">
           <h1 className="app-title">Image Convert Lite</h1>
@@ -633,7 +630,6 @@ export function ConvertPage() {
           <ResourceDiagnosticsPanel items={items} />
         )}
       </div>
-      <SakutioFooter />
-    </div>
+    </>
   );
 }
