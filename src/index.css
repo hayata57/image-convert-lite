@@ -30,46 +30,6 @@ body {
   flex-direction: column;
 }
 
-/* Sakutio shared header
-   グローバルヘッダー本体は、Sakutio Homeが配信する共通Web Component
-   （https://sakutio.com/shared/sakutio-global-header.js）に一元化されているため、
-   このファイルにはヘッダー専用CSSを持たない。読み込み失敗時の最小フォールバックのみ以下に定義する。 */
-.sakutio-header-fallback {
-  width: 100%;
-  max-width: 1040px;
-  margin: 0 auto;
-  padding: 0.55rem 1.25rem;
-  min-height: 3.75rem;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem 1.5rem;
-}
-
-.sakutio-header-fallback a {
-  color: #4258a1;
-  text-decoration: none;
-  margin-right: 1rem;
-}
-
-.sakutio-header-fallback nav {
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 0.35rem 1rem;
-}
-
-sakutio-global-footer {
-  display: block;
-  width: 100%;
-  margin-top: auto;
-}
-
-.sakutio-footer-fallback {
-  padding: 1rem 1.5rem;
-  text-align: center;
-}
-
 .app-header {
   background: linear-gradient(135deg, #2563eb, #1d4ed8);
   color: #ffffff;

@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
+import { SakutioFooter } from './components/SakutioFooter';
+import { SakutioHeader } from './components/SakutioHeader';
 import { ConvertPage } from './pages/ConvertPage';
 import { GuidePage } from './pages/GuidePage';
 import {
@@ -26,17 +28,19 @@ function PageMetaManager() {
   return null;
 }
 
-function App() {
+export default function App() {
   return (
     <BrowserRouter>
       <PageMetaManager />
-      <Routes>
-        <Route path="/" element={<ConvertPage />} />
-        <Route path="/guide" element={<GuidePage />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+      <div className="app">
+        <SakutioHeader />
+        <Routes>
+          <Route path="/" element={<ConvertPage />} />
+          <Route path="/guide" element={<GuidePage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+        <SakutioFooter />
+      </div>
     </BrowserRouter>
   );
 }
-
-export default App;

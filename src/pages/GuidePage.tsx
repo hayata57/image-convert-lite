@@ -1,7 +1,5 @@
 import { type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { SakutioHeader } from '../components/SakutioHeader';
-import { SakutioFooter } from '../components/SakutioFooter';
 import { MAX_FILE_SIZE_MB, MAX_FILES } from '../constants';
 
 const FAQ_ITEMS: { question: string; answer: ReactNode }[] = [
@@ -95,9 +93,7 @@ const FAQ_ITEMS: { question: string; answer: ReactNode }[] = [
 
 export function GuidePage() {
   return (
-    <div className="app">
-      <SakutioHeader />
-
+    <>
       <header className="app-header">
         <div className="app-header__content">
           <h1 className="app-title">Image Convert Liteの使い方</h1>
@@ -323,7 +319,6 @@ export function GuidePage() {
           （1回あたり最大 {MAX_FILES} 枚・1ファイル最大 {MAX_FILE_SIZE_MB}MB）
         </p>
       </div>
-      <SakutioFooter />
-    </div>
+    </>
   );
 }
