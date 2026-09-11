@@ -1082,3 +1082,7 @@ body {
     justify-content: center;
   }
 }
+
+header.sakutio-chrome.sakutio-chrome--header {
+  position: static;
+}
