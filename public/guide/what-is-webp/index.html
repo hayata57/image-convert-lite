@@ -20,6 +20,125 @@
       @media (max-width: 542px) { sakutio-global-header { min-height: 90.5px; } }
       @media (max-width: 480px) { sakutio-global-header { min-height: 70.2px; } }
       @media (max-width: 391px) { sakutio-global-header { min-height: 103px; } }
+      .sg-header,
+      .sg-prose,
+      .sg-summary,
+      .sg-toc,
+      .sg-faq {
+        letter-spacing: 0;
+      }
+      .sg-prose {
+        line-height: 1.74;
+      }
+      .sg-prose p {
+        margin-bottom: 18px;
+      }
+      .sg-prose li + li {
+        margin-top: 6px;
+      }
+      .sg-section > h2 {
+        width: 100%;
+        margin: 0 0 18px;
+        padding: 12px 14px 12px 32px;
+        border: 1px solid #b9cbe0;
+        border-radius: 7px;
+        background: #fbfdff;
+        color: var(--sakutio-heading);
+        font-size: 28px;
+        line-height: 1.45;
+        font-weight: 800;
+        letter-spacing: -0.015em;
+        overflow-wrap: anywhere;
+      }
+      .sg-section > h2::before {
+        left: 13px;
+        top: 50%;
+        bottom: auto;
+        width: 8px;
+        height: 0.9em;
+        border-radius: 1px;
+        background: #5d9bd3;
+        transform: translateY(-50%);
+      }
+      .sg-section > h3 {
+        margin: 34px 0 12px;
+        letter-spacing: 0;
+      }
+      .sg-step__body h3 {
+        margin: 0 0 13px;
+      }
+      .sg-summary {
+        background: #f6f9fc;
+        border-left-color: #c8daed;
+      }
+      .sg-toc {
+        margin-top: 28px;
+      }
+      .sg-toc summary {
+        min-height: 42px;
+        padding: 11px 16px;
+      }
+      .sg-toc__list {
+        padding: 0 16px 12px;
+      }
+      .sg-toc__item + .sg-toc__item {
+        margin-top: 1px;
+      }
+      .sg-toc__link {
+        min-height: 38px;
+        padding: 6px;
+        grid-template-columns: 1.8rem 1fr;
+      }
+      .sg-toc__link:hover {
+        background: #eef4fa;
+      }
+      .sg-prose .sg-note p:last-child,
+      .sg-prose .sg-faq__answer p:last-child {
+        margin-bottom: 0;
+      }
+      @media (max-width: 900px) {
+        .sg-section > h2 {
+          font-size: 25px;
+        }
+      }
+      @media (max-width: 600px) {
+        .sg-prose {
+          font-size: 16px;
+          line-height: 1.76;
+        }
+        .sg-toc {
+          margin-top: 24px;
+        }
+        .sg-toc summary {
+          padding: 10px 14px;
+        }
+        .sg-toc__list {
+          padding: 0 8px 10px;
+        }
+        .sg-toc__link {
+          padding-right: 5px;
+          padding-left: 5px;
+        }
+        .sg-section > h2 {
+          margin-bottom: 17px;
+          padding: 11px 12px 11px 29px;
+          font-size: 23px;
+          line-height: 1.5;
+        }
+        .sg-section > h2::before {
+          left: 11px;
+          width: 7px;
+          height: 0.88em;
+        }
+        .sg-section > h3 {
+          margin-top: 28px;
+          margin-bottom: 11px;
+          font-size: 19px;
+        }
+        .sg-step__body h3 {
+          margin: 0 0 13px;
+        }
+      }
     </style>
     <script defer src="https://sakutio.com/shared/sakutio-global-header.js"></script>
     <script defer src="https://sakutio.com/shared/sakutio-global-footer.js"></script>
@@ -82,9 +201,7 @@
 
           <section class="sg-section sg-prose" id="what-is-webp">
             <h2>WebPとは？</h2>
-            <p>WebP（ウェッピー）は、Googleが開発した画像形式です。ファイルの拡張子は「.webp」になります。</p>
-            <p>JPGと同じように画像データの一部を省いて容量を小さくする「非可逆圧縮」と、PNGのように元の情報を保ったまま圧縮する「可逆圧縮」の両方に対応しています。</p>
-            <p>さらに、PNGのような<strong>背景が透明な画像（透過画像）</strong>も扱えます。</p>
+            <p>WebP（ウェッピー）は、Googleが開発した画像形式です。ファイルの拡張子は「.webp」になります。JPGと同じように画像データの一部を省いて容量を小さくする「非可逆圧縮」と、PNGのように元の情報を保ったまま圧縮する「可逆圧縮」の両方に対応しています。さらに、PNGのような<strong>背景が透明な画像（透過画像）</strong>も扱えます。</p>
             <p>つまりWebPは、JPGやPNGがそれぞれ得意としてきた特徴を幅広く持ちながら、<strong class="sg-marker">画像容量を小さくしやすいよう設計された形式</strong>と考えるとわかりやすいでしょう。</p>
           </section>
 
@@ -97,9 +214,7 @@
             <p><span class="sg-marker">画像容量が小さくなれば、Webサイトやブログでは画像の読み込みに必要なデータ量を減らしやすくなります。</span></p>
 
             <h3>透過画像にも使える</h3>
-            <p>WebPは透明部分を持つ画像にも対応しています。</p>
-            <p>そのため、「背景を透明にしたいからPNGを使っている」という場合でも、用途によってはWebPへ変換できます。</p>
-            <p>ロゴやイラストなど、透明な背景を残したまま画像容量を抑えたい場合にも便利です。</p>
+            <p>WebPは透明部分を持つ画像にも対応しています。そのため、「背景を透明にしたいからPNGを使っている」という場合でも、用途によってはWebPへ変換できます。ロゴやイラストなど、透明な背景を残したまま画像容量を抑えたい場合にも便利です。</p>
           </section>
 
           <section class="sg-section sg-prose" id="cautions">
@@ -131,8 +246,7 @@
 
           <section class="sg-section sg-prose" id="how-to-convert">
             <h2>JPG・PNG画像をWebPに変換する方法</h2>
-            <p>Sakutioの「<a href="/">Image Convert Lite</a>」では、JPGやPNGなどの画像をブラウザー上でWebPへ変換できます。</p>
-            <p>複数の画像をまとめて追加して変換することもできます。</p>
+            <p>Sakutioの「<a href="/">Image Convert Lite</a>」では、JPGやPNGなどの画像をブラウザー上でWebPへ変換できます。複数の画像をまとめて追加して変換することもできます。</p>
 
             <div class="sg-steps">
               <section class="sg-step">
